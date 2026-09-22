@@ -14,26 +14,35 @@ class RCSG_base #(
 // 3 propiedad para clear
     bit clr;
 // 4 variable estática de grado de llenado
-    static int use_dw;
-// 5.1 constraint que controle que no hay lecturas solo cuando la FIFO esta vacia 
-    
+    static int [DEPTH-1:0] use_dw;
+// 5.1 constraint que controle que no hay lecturas solo cuando la FIFO esta vacia
     constraint rd {use_dw == 0 -> rd_en == 0;};
 //5.2 constraint que controle que no hay escrituras solo cuando la FIFO está llena
-    constraint wr {use_dw == WIDTH -> wr_en == 0;};
+    constraint wr {use_dw == DEPTH -> wr_en == 0;};
 //metodos
 //1 constructor
     function new;
-        rd_en = 0;
-        wr_en = 0;
         clr = 0;
-        use_dw = 0;
-        foreach (data_in[i]) data_in[i] = 0;
     endfunction : new
 //2 funcion calculo del grado de llenado
+    static function gradoLlenado;
+        if (wr_en && !rd_en) begin
+            use_dw++;
+        end
+        else
+            if (!wr_en && rd_en) begin
+                use_dw--;
+            end
+    endfunction
 
 //3 funcion reset del grado de llenado
-    
+    static function gradoLlenado_rst;
+        use_dw = 0;
+    endfunction
 //4 funcion post_randomize
- 
- 
+    function void post_randomize();
+      begin
+        gradoLlenado();
+      end
+    endfunction
 endclass

@@ -4,8 +4,8 @@ package utilidades_pkg;
  
  
 typedef class RCSG_base;
-//typedef class RCSG_subir;
-//typedef class RCSG_bajar;
+typedef class RCSG_subir;
+typedef class RCSG_bajar;
 // typedef class FIFO_Scoreboard;
 // typedef class FIFO_Transaction;
 //typedef class FIFO_Coverage;
