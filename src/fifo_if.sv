@@ -12,11 +12,20 @@ interface fifo_if(input bit clk);   //cabecera del interfaz. Recorda con dos par
     logic       vacio       ;
     logic       rd_en       ;
     logic       wr_en       ;
-    logic       clr         ;
 
     logic   [ADDRESS:0]   use_dw ;
     logic   [WIDTH-1:0]     data_in;
     logic   [WIDTH-1:0]     data_out;
+
+    //4.1 definición clocking block px
+    clocking px @(posedge clk);
+
+    input #1ns      lleno;
+    input #1ns      vacio;
+    input #1ns      data_out;
+    input #1ns      use_dw;
+
+    endclocking:px;
 
     //4.2 definición clocking tx
     clocking tx @(posedge clk);
@@ -32,28 +41,31 @@ interface fifo_if(input bit clk);   //cabecera del interfaz. Recorda con dos par
     output #2ns rst_a;
     endclocking:neg_event;
 
-    //5.3 definición del modport driver
-    //os proporciono el código
-    modport driver (clocking tx,
-    clocking neg_event
-    );
-
     //5.1 definición del modport duv
     //añadir vuestro código, absolutamente necesario para esta primera sesion
     modport duv (
-    input             clk      ,
-    input             rst_a    ,
-    input           rst_s    ,
-    input             rd_en    ,
-    output            lleno     ,
-    //completad el listado
+        input     clk,
+        input     rst_a,
+        input     rst_s,
+        input     rd_en,
+        input     wr_en,
+        input     data_in,
 
+        output    data_out,
+        output    vacio,
+        output    use_dw,
+        output    lleno,
+        output    clr
     );
 
-    //4.1 definición clocking px
-    //añadir vuestro código, solo necesario para la segunda sesion
-
     //5.2 definición del modport monitor
-    //añadir vuestro código, solo necesario para la segunda sesion
+    modport monitor (clocking px);
+
+    //5.3 definición del modport driver
+    //os proporciono el código
+    modport driver (
+        clocking tx,
+        clocking neg_event
+    );
 
 endinterface //fifo_if

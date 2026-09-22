@@ -1,8 +1,9 @@
-class RCGS_bajar extends RCGS_base #(
+class RCGS_bajar #(
     parameter int WIDTH = 32,
     parameter int DEPTH = 16
-);
-    constraint bajar {wr_en == 0 -> rd_en == 0;};
+) extends utilidades_pkg::RCSG_base #(WIDTH,DEPTH);
+
+    constraint bajar_c {wr_en == 0 -> rd_en == 0;};
 
     function new();
         super.new();
