@@ -1,0 +1,153 @@
+m255
+K4
+z2
+!s12c _opt2
+Z0 !s99 nomlopt
+!s12c _opt1
+R0
+!s11f vlog 2025.1_2 2025.04, Apr  7 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/jsanbar/Documents/DMA_Practica1/VsCodeQuestasim-main/sim
+T_opt1
+!s110 1789482998
+V[EmN@WBCEX1gX8379eT^M1
+04 20 4 work FIFO_no_sintetizable fast 0
+=1-cc96e51dd400-6aa957f5-3b4-4a98
+R0
+Z2 !s12f OEM100
+Z3 !s12b OEM100
+Z4 !s124 OEM100
+Z5 !s135 nogc
+Z6 o-quiet -auto_acc_if_foreign -work work +acc
+Z7 tCvgOpt 0 defaultOptions 1107178788
+n@_opt1
+Z8 OL;O;2025.1_2;82
+R1
+T_opt2
+!s110 1789483507
+VHo=Sd;KVh:Q8TP[4k>aI30
+04 10 4 work FIFO_tb_v0 fast 0
+=1-cc96e51dd400-6aa959f2-322-2c50
+R0
+R2
+R3
+R4
+R5
+R6
+R7
+n@_opt2
+R8
+R1
+vFIFO_no_sintetizable
+2../src/FIFO_no_sintetizable.sv
+Z9 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z10 !s110 1789483773
+!i10b 1
+!s100 Q;MlE3;=j9R3oVc`Z1PE;3
+Id==5B_UBC3i8Eo@B;0ngm2
+S1
+R1
+w1789481625
+8../src/FIFO_no_sintetizable.sv
+F../src/FIFO_no_sintetizable.sv
+!i122 20
+L0 1 67
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+Z12 OL;L;2025.1_2;82
+r1
+!s85 0
+31
+Z13 !s108 1789483773.000000
+!s107 ../src/FIFO_no_sintetizable.sv|
+!s90 +incdir+../src|-quiet|../src/FIFO_no_sintetizable.sv|-work|work|-lint|
+!i113 0
+Z14 o-quiet -work work -lint -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 !s92 -quiet +incdir+../src -work work -lint -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z16 tCvgOpt 0 defaultOptions 1085220168
+n@f@i@f@o_no_sintetizable
+vFIFO_tb_v0
+2../src/FIFO_tb_v0.sv
+R9
+R10
+!i10b 1
+!s100 lPQ40J[DH]Ql9VY0=j[b53
+I9ZodGH1Fe^9i;MoGeZSi>3
+S1
+R1
+w1789483460
+8../src/FIFO_tb_v0.sv
+F../src/FIFO_tb_v0.sv
+!i122 21
+L0 4 288
+R11
+R12
+r1
+!s85 0
+31
+R13
+!s107 ../src/FIFO_tb_v0.sv|
+!s90 +incdir+../src|-quiet|../src/FIFO_tb_v0.sv|-work|work|-lint|
+!i113 0
+R14
+R15
+R16
+n@f@i@f@o_tb_v0
+vRAM_DP
+2../src/ram_dp.sv
+R9
+Z17 !s110 1789482772
+!i10b 1
+!s100 TlJ?<2D_6^Dk9Q>:cX7:L2
+I7PoQTAR1mIK?]2_J:L1b32
+S1
+R1
+w1789480430
+8../src/ram_dp.sv
+F../src/ram_dp.sv
+!i122 10
+L0 3 42
+R11
+R12
+r1
+!s85 0
+31
+Z18 !s108 1789482772.000000
+!s107 ../src/ram_dp.sv|
+!s90 +incdir+../src|-quiet|../src/ram_dp.sv|-work|work|-lint|
+!i113 0
+R14
+R15
+R16
+n@r@a@m_@d@p
+vRAM_DP_vlg_tst
+2../src/RAM_DP_TB.sv
+R9
+R17
+!i10b 1
+!s100 DFB>Fz?kDf^JE4d:V?[Vk2
+IB?4FHKCiaEj8MIB2:nUM42
+S1
+R1
+w1789481083
+8../src/RAM_DP_TB.sv
+F../src/RAM_DP_TB.sv
+!i122 11
+L0 28 104
+R11
+R12
+r1
+!s85 0
+31
+R18
+!s107 ../src/RAM_DP_TB.sv|
+!s90 +incdir+../src|-quiet|../src/RAM_DP_TB.sv|-work|work|-lint|
+!i113 0
+R14
+R15
+R16
+n@r@a@m_@d@p_vlg_tst
