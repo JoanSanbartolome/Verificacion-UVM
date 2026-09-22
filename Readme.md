@@ -36,4 +36,11 @@ The file can be created by saving the wave using *Ctrl+S* in the wave window.
 Sample systemverilog files
 
 ## Use
+
 Inside vscode and assuming I am in the root directory, use the Ctrl-Shift-B combination to select either Compile or Simulate.
+
+
+
+## Plantilla extraida del repositorio
+
+https://github.com/rgadea-girones/VsCodeQuestasim
