@@ -1,8 +1,8 @@
 module FIFO_top_duv #(
     parameter int WIDTH = 32,
     parameter int DEPTH = 16
-) (fifo_if.duv bus) ; 
- 
+) (fifo_if.duv bus) ;
+
 //instanciación de vuestra DUV a verificar
 // Instancia del DUV
 FIFO_no_sintetizable DUV (
