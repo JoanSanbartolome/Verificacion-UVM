@@ -54,8 +54,7 @@ interface fifo_if(input bit clk);   //cabecera del interfaz. Recorda con dos par
         output    data_out,
         output    vacio,
         output    use_dw,
-        output    lleno,
-        output    clr
+        output    lleno
     );
 
     //5.2 definición del modport monitor

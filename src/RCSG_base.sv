@@ -15,7 +15,7 @@ class RCSG_base #(
 // 3 propiedad para clear
     bit clr;
 // 4 variable estática de grado de llenado
-    static int [DEPTH-1:0] use_dw;
+    static bit [DEPTH-1:0] use_dw;
 // 5.1 constraint que controle que no hay lecturas solo cuando la FIFO esta vacia
     constraint rd_c {use_dw == 0 -> rd_en == 0;};
 //5.2 constraint que controle que no hay escrituras solo cuando la FIFO está llena
@@ -27,7 +27,7 @@ class RCSG_base #(
         this.intf_fifo=intf_fifo;
     endfunction : new
 //2 funcion calculo del grado de llenado
-    static function gradoLlenado;
+    function void gradoLlenado;
         if (wr_en && !rd_en) begin
             use_dw++;
         end
