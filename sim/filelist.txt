@@ -1,2 +1,4 @@
 ../src/FIFO_no_sintetizable.sv
 ../src/FIFO_tb_v0.sv
+../src/utilidades_pkg.sv
+../src/fifo_if.sv
