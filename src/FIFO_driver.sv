@@ -2,8 +2,8 @@ class FIFO_Driver#(
     parameter int WIDTH = 32,
     parameter int DEPTH = 16
 );
-    utilidades_pkg::RCGS_subir handler_subir;
-    utilidades_pkg::RCGS_bajar handler_bajar;
+    utilidades_pkg::RCSG_subir handler_subir;
+    utilidades_pkg::RCSG_bajar handler_bajar;
     virtual fifo_if#(WIDTH,DEPTH).driver driver_interface;
 
     function new(virtual fifo_if#(WIDTH,DEPTH).driver driver_interface);
@@ -18,10 +18,10 @@ class FIFO_Driver#(
         else
             $display("Randomizacion fallida");
 
-        fifo_if.tx.rst_s   <= handler_subir.clr;
-        fifo_if.tx.data_in <= handler_subir.data_in;
-        fifo_if.tx.rd_en   <= handler_subir.rd_en;
-        fifo_if.tx.wr_en   <= handler_subir.wr_en;
+        driver_interface.tx.rst_s   <= handler_subir.clr;
+        driver_interface.tx.data_in <= handler_subir.data_in;
+        driver_interface.tx.rd_en   <= handler_subir.rd_en;
+        driver_interface.tx.wr_en   <= handler_subir.wr_en;
 
     endfunction
 endclass //FIFO_Driver

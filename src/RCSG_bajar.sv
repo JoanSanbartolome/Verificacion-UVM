@@ -1,4 +1,4 @@
-class RCGS_bajar #(
+class RCSG_bajar #(
     parameter int WIDTH = 32,
     parameter int DEPTH = 16
 ) extends utilidades_pkg::RCSG_base #(WIDTH,DEPTH);
@@ -9,4 +9,4 @@ class RCGS_bajar #(
         super.new();
     endfunction : new
 
-endclass //RCGS_subir extends RCGS_base
+endclass //RCSG_bajar extends RCSG_base
