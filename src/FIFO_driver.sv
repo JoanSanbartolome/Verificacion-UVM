@@ -12,7 +12,20 @@ class FIFO_Driver#(
         this.driver_interface = driver_interface;
     endfunction //new()
 
-    function secuencia_subida;
+    task inicializar_duv; // Establece las condiciones iniciales para el test
+        
+        @(driver_interface.neg_event); // Reseta a nivel bajo en los flancos de bajada del reloj
+        driver_interface.neg_event.rst_a <= 1'b1;
+        @(driver_interface.neg_event);
+        driver_interface.neg_event.rst_a <= 1'b0;
+        repeat(3)begin
+            @(driver_interface.neg_event);
+        end
+        driver_interface.neg_event.rst_a <= 1'b1;
+        @(driver_interface.neg_event);
+    endtask
+
+    task secuencia_subida;
         if(handler_subir.randomize() == 1)
             $display("Randomizacion exitosa");
         else
@@ -24,5 +37,5 @@ class FIFO_Driver#(
         driver_interface.tx.rd_en   <= handler_subir.rd_en;
         driver_interface.tx.wr_en   <= handler_subir.wr_en;
 
-    endfunction
+    endtask
 endclass //FIFO_Driver
