@@ -8,8 +8,12 @@ class FIFO_Testaleatorio1#(
         enviroment = new(vif_test);
     endfunction //new()
 
+    task reset_duv;
+        enviroment.driver.inicializar_duv();
+    endtask
+
     task test_duv; // Test para verificar el duv
-        
+        enviroment
     endtask //automatic
 
 endclass //FIFO_Driver

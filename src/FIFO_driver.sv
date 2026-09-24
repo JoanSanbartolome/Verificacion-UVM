@@ -11,52 +11,56 @@ class FIFO_Driver#(
         this.driver_interface = driver_interface;
     endfunction //new()
 
-    task inicializar_duv; // Establece las condiciones iniciales para el test
-        
-        @(driver_interface.neg_event); // Reseta a nivel bajo en los flancos de bajada del reloj
-        driver_interface.neg_event.rst_a <= 1'b1;
-        @(driver_interface.neg_event);
-        driver_interface.neg_event.rst_a <= 1'b0;
-        repeat(3)begin
+    task inicializar_duv; 
+        begin // Establece las condiciones iniciales para el test
+            
+            @(driver_interface.neg_event); // Reseta a nivel bajo en los flancos de bajada del reloj
+            driver_interface.neg_event.rst_a <= 1'b1;
+            @(driver_interface.neg_event);
+            driver_interface.neg_event.rst_a <= 1'b0;
+            repeat(3)begin
+                @(driver_interface.neg_event);
+            end
+            driver_interface.neg_event.rst_a <= 1'b1;
             @(driver_interface.neg_event);
         end
-        driver_interface.neg_event.rst_a <= 1'b1;
-        @(driver_interface.neg_event);
     endtask
 
     task secuencia_llenado;
-        @(driver_interface.tx);
-        driver_interface.tx.rst_s   <= 1'b1;
+        begin
+            @(driver_interface.tx);
+            driver_interface.tx.rst_s   <= 1'b1;
 
-        if(handler_subir.randomize() == 1)
-            $display("Randomizacion exitosa");
-        else
-            $display("Randomizacion fallida");
+            if(handler_subir.randomize() == 1)
+                $display("Randomizacion exitosa");
+            else
+                $display("Randomizacion fallida");
 
-        @(driver_interface.tx);
-        driver_interface.tx.data_in <= handler_subir.data_in;
-        driver_interface.tx.rd_en   <= handler_subir.rd_en;
-        driver_interface.tx.wr_en   <= handler_subir.wr_en;
+            @(driver_interface.tx);
+            driver_interface.tx.data_in <= handler_subir.data_in;
+            driver_interface.tx.rd_en   <= handler_subir.rd_en;
+            driver_interface.tx.wr_en   <= handler_subir.wr_en;
 
-        @(driver_interface.tx);
-
+            @(driver_interface.tx);
+        end
     endtask
 
     task secuencia_vaciado;
-        @(driver_interface.tx);
-        driver_interface.tx.rst_s   <= 1'b1;
+        begin
+            @(driver_interface.tx);
+            driver_interface.tx.rst_s   <= 1'b1;
 
-        if(handler_bajar.randomize() == 1)
-            $display("Randomizacion exitosa");
-        else
-            $display("Randomizacion fallida");
+            if(handler_bajar.randomize() == 1)
+                $display("Randomizacion exitosa");
+            else
+                $display("Randomizacion fallida");
 
-        @(driver_interface.tx);
-        driver_interface.tx.data_in <= handler_bajar.data_in;
-        driver_interface.tx.rd_en   <= handler_bajar.rd_en;
-        driver_interface.tx.wr_en   <= handler_bajar.wr_en;
+            @(driver_interface.tx);
+            driver_interface.tx.data_in <= handler_bajar.data_in;
+            driver_interface.tx.rd_en   <= handler_bajar.rd_en;
+            driver_interface.tx.wr_en   <= handler_bajar.wr_en;
 
-        @(driver_interface.tx);
-        
+            @(driver_interface.tx);
+        end
     endtask
 endclass //FIFO_Driver
