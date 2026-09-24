@@ -2,3 +2,6 @@
 ../src/FIFO_tb_v0.sv
 ../src/utilidades_pkg.sv
 ../src/fifo_if.sv
+../src/FIFO_tb.sv
+../src/RAM_DP_vlg_tst.sv
+../src/RAM_DP.sv
