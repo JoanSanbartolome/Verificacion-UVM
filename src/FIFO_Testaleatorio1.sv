@@ -13,7 +13,19 @@ class FIFO_Testaleatorio1#(
     endtask
 
     task test_duv; // Test para verificar el duv
-        enviroment
+        begin
+            // Secuencia de llenado de la FIFO
+            $display("secuencia 1");
+            repeat (2000) begin
+                enviroment.driver.secuencia_llenado();
+            end
+            // Secuencia de vaciado de la FIFO
+            $display("secuencia 2");
+            repeat (20000) begin
+                enviroment.driver.secuencia_vaciado();
+            end
+            $display("FIN DEL TEST");
+        end    
     endtask //automatic
 
 endclass //FIFO_Driver
