@@ -9,7 +9,7 @@ typedef class RCSG_bajar;
 // typedef class FIFO_Scoreboard;
 // typedef class FIFO_Transaction;
 //typedef class FIFO_Coverage;
-//typedef class FIFO_Enviroment;
+typedef class FIFO_Enviroment;
 typedef class FIFO_Driver;
 // typedef class FIFO_Monitor;
 //typedef class FIFO_Testaleatorio1;
@@ -20,7 +20,7 @@ typedef class FIFO_Driver;
 //`include "FIFO_Scoreboard.sv"
 //'include "FIFO_Transaction.sv"
 //`include "FIFO_Coverage.sv"
-//`include "FIFO_Enviroment.sv"
+`include "FIFO_Enviroment.sv"
 `include "FIFO_Driver.sv"
 // `include "FIFO_Monitor.sv"
 //`include "FIFO_Testaleatorio1.sv"
