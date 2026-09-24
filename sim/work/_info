@@ -43,31 +43,56 @@ R7
 n@_opt2
 R8
 R1
-vFIFO_no_sintetizable
+Yfifo_if
 Z9 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z10 !s110 1790176612
+Z10 !s110 1790240115
 !i10b 1
-!s100 G5P^7Fjnh09kMDJni::?01
-Ia9[>22;XFe<o?AfPkAhm11
+!s100 bZQiB8zVVEg:nLIA[I:;T3
+I46?5FY<>3Oc?abmYIQTlg1
 Z11 VDg1SIo80bB@j0V0VzS_@n1
-!s105 FIFO_no_sintetizable_sv_unit
+!s105 fifo_if_sv_unit
 S1
-Z12 dC:/DMA/Verificacion-UVM/sim
-Z13 w1790159185
-8../src/FIFO_no_sintetizable.sv
-F../src/FIFO_no_sintetizable.sv
-L0 1
-Z14 OV;L;10.5b;63
+Z12 dC:/Users/josan/proyectos/Practicas-DMA/sim
+w1790104102
+8../src/fifo_if.sv
+F../src/fifo_if.sv
+L0 3
+Z13 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z15 !s108 1790176612.000000
+Z14 !s108 1790240115.000000
+!s107 ../src/fifo_if.sv|
+!s90 +incdir+../src|-quiet|../src/fifo_if.sv|-work|work|-lint|
+!i113 1
+Z15 o-quiet -work work -lint
+Z16 !s92 -quiet +incdir+../src -work work -lint
+Z17 tCvgOpt 0
+vFIFO_no_sintetizable
+R9
+R10
+!i10b 1
+!s100 G5P^7Fjnh09kMDJni::?01
+Ia9[>22;XFe<o?AfPkAhm11
+R11
+!s105 FIFO_no_sintetizable_sv_unit
+S1
+R12
+w1789481625
+8../src/FIFO_no_sintetizable.sv
+F../src/FIFO_no_sintetizable.sv
+L0 1
+R13
+r1
+!s85 0
+31
+R14
 !s107 ../src/FIFO_no_sintetizable.sv|
 !s90 +incdir+../src|-quiet|../src/FIFO_no_sintetizable.sv|-work|work|-lint|
 !i113 1
-Z16 o-quiet -work work -lint
-Z17 !s92 -quiet +incdir+../src -work work -lint
-Z18 tCvgOpt 0
+R15
+R16
+R17
 n@f@i@f@o_no_sintetizable
 vFIFO_tb_v0
 R9
@@ -79,26 +104,26 @@ R11
 !s105 FIFO_tb_v0_sv_unit
 S1
 R12
-R13
+w1789483460
 8../src/FIFO_tb_v0.sv
 F../src/FIFO_tb_v0.sv
 L0 4
-R14
+R13
 r1
 !s85 0
 31
-R15
+R14
 !s107 ../src/FIFO_tb_v0.sv|
 !s90 +incdir+../src|-quiet|../src/FIFO_tb_v0.sv|-work|work|-lint|
 !i113 1
+R15
 R16
 R17
-R18
 n@f@i@f@o_tb_v0
 vRAM_DP
 2../src/ram_dp.sv
-Z19 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
-Z20 !s110 1789482772
+Z18 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z19 !s110 1789482772
 !i10b 1
 !s100 TlJ?<2D_6^Dk9Q>:cX7:L2
 I7PoQTAR1mIK?]2_J:L1b32
@@ -110,22 +135,22 @@ F../src/ram_dp.sv
 !i122 10
 L0 3 42
 R11
-Z21 OL;L;2025.1_2;82
+Z20 OL;L;2025.1_2;82
 r1
 !s85 0
 31
-Z22 !s108 1789482772.000000
+Z21 !s108 1789482772.000000
 !s107 ../src/ram_dp.sv|
 !s90 +incdir+../src|-quiet|../src/ram_dp.sv|-work|work|-lint|
 !i113 0
-Z23 o-quiet -work work -lint -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z24 !s92 -quiet +incdir+../src -work work -lint -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z25 tCvgOpt 0 defaultOptions 1085220168
+Z22 o-quiet -work work -lint -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z23 !s92 -quiet +incdir+../src -work work -lint -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z24 tCvgOpt 0 defaultOptions 1085220168
 n@r@a@m_@d@p
 vRAM_DP_vlg_tst
 2../src/RAM_DP_TB.sv
+R18
 R19
-R20
 !i10b 1
 !s100 DFB>Fz?kDf^JE4d:V?[Vk2
 IB?4FHKCiaEj8MIB2:nUM42
@@ -137,15 +162,44 @@ F../src/RAM_DP_TB.sv
 !i122 11
 L0 28 104
 R11
-R21
+R20
 r1
 !s85 0
 31
-R22
+R21
 !s107 ../src/RAM_DP_TB.sv|
 !s90 +incdir+../src|-quiet|../src/RAM_DP_TB.sv|-work|work|-lint|
 !i113 0
+R22
 R23
 R24
-R25
 n@r@a@m_@d@p_vlg_tst
+Xutilidades_pkg
+!s115 fifo_if
+R9
+R10
+!i10b 1
+!s100 J6<DACM:ij56jzL9gieIR3
+ITS_OlMAAjDNXkmGjmf<dg0
+VTS_OlMAAjDNXkmGjmf<dg0
+S1
+R12
+w1790240046
+8../src/utilidades_pkg.sv
+F../src/utilidades_pkg.sv
+F../src/RCSG_base.sv
+F../src/RCSG_subir.sv
+F../src/RCSG_bajar.sv
+F../src/FIFO_Driver.sv
+L0 3
+R13
+r1
+!s85 0
+31
+R14
+!s107 ../src/FIFO_Driver.sv|../src/RCSG_bajar.sv|../src/RCSG_subir.sv|../src/RCSG_base.sv|../src/utilidades_pkg.sv|
+!s90 +incdir+../src|-quiet|../src/utilidades_pkg.sv|-work|work|-lint|
+!i113 1
+R15
+R16
+R17
