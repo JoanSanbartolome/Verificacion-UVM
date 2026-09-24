@@ -43,6 +43,7 @@ wire [7:0]  data_out;
 RAM_DP i1 (
 // port map - connection between master ports and signals/registers   
 	.clock(clock),
+	
 	.data_in(data_in),
 	.data_out(data_out),
 	.rdaddress(rdaddress),
