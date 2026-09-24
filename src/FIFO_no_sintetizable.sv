@@ -1,8 +1,9 @@
 module FIFO_no_sintetizable
-#(parameter DEPTH=32, parameter WIDTH=8)
+#(parameter DEPTH=32, 
+  parameter WIDTH=8)
  
-  ( input   logic CLOCK,//!reloj de sistema
-  input  logic RESET_N, //!reset asíncrono activo en bajo
+  ( input logic CLOCK,//!reloj de sistema
+   input  logic RESET_N, //!reset asíncrono activo en bajo
    input  logic CLEAR_N, //!limpia la fifo, activo en bajo
    input  logic [WIDTH-1:0] DATA_IN, //!dato a escribir en la fifo
    input  logic READ, //!señal de lectura
