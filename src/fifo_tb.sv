@@ -12,20 +12,20 @@ module fifo_tb();
   logic rst_s;
 
 
-  //1.instanciación del top del diseño
-  FIFO_top_duv #(
-      .WIDTH(DATA_WIDTH),
-      .DEPTH(DEPTH)
-  ) duv (
-      .bus(if_fifo)
-  );
-
-  //2.instanciación del interfaz
+  //1.instanciación del interfaz
   fifo_if #(
       .WIDTH(DATA_WIDTH),
       .DEPTH(DEPTH)
   ) if_fifo (
       .clk(clk)
+  );
+
+  //2.instanciación del top del diseño
+  FIFO_top_duv #(
+      .WIDTH(DATA_WIDTH),
+      .DEPTH(DEPTH)
+  ) duv (
+      .bus(if_fifo)
   );
 
 
