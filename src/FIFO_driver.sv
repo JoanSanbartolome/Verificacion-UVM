@@ -18,6 +18,7 @@ class FIFO_Driver#(
         else
             $display("Randomizacion fallida");
 
+        @(driver_interface.tx);
         driver_interface.tx.rst_s   <= handler_subir.clr;
         driver_interface.tx.data_in <= handler_subir.data_in;
         driver_interface.tx.rd_en   <= handler_subir.rd_en;
