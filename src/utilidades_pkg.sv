@@ -12,7 +12,7 @@ typedef class RCSG_bajar;
 typedef class FIFO_Enviroment;
 typedef class FIFO_Driver;
 // typedef class FIFO_Monitor;
-//typedef class FIFO_Testaleatorio1;
+typedef class FIFO_Testaleatorio1;
  
 `include "RCSG_base.sv"
 `include "RCSG_subir.sv"
@@ -23,7 +23,7 @@ typedef class FIFO_Driver;
 `include "FIFO_Enviroment.sv"
 `include "FIFO_Driver.sv"
 // `include "FIFO_Monitor.sv"
-//`include "FIFO_Testaleatorio1.sv"
+`include "FIFO_Testaleatorio1.sv"
  
  
 endpackage : utilidades_pkg

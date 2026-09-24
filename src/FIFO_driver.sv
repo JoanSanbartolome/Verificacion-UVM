@@ -4,7 +4,6 @@ class FIFO_Driver#(
 );
     utilidades_pkg::RCSG_subir handler_subir;
     utilidades_pkg::RCSG_bajar handler_bajar;
-    virtual fifo_if#(WIDTH,DEPTH).driver driver_interface;
 
     function new(virtual fifo_if#(WIDTH,DEPTH).driver driver_interface);
         handler_subir = new();

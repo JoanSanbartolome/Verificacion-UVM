@@ -1,11 +1,11 @@
-class FIFO_Driver#(
+class FIFO_Enviroment#(
     parameter int WIDTH = 32,
     parameter int DEPTH = 16
 );
-    virtual fifo_if#(WIDTH,DEPTH) env_interface;
+    utilidades_pkg::FIFO_Driver driver; //Declaracion de objeto tipo driver
 
-    function new(virtual fifo_if#(WIDTH,DEPTH) env_interface);
-        this.env_interface = env_interface;
+    function new(virtual fifo_if#(WIDTH,DEPTH).driver driver_vif);
+        driver = new(driver_vif);
     endfunction //new()
 
 endclass //FIFO_Driver
