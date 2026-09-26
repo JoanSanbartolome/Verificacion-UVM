@@ -12,7 +12,7 @@ class FIFO_Driver#(
         this.driver_interface = driver_interface;
     endfunction //new()
 
-    function secuencia_subida;
+    function void secuencia_subida;
         if(handler_subir.randomize() == 1)
             $display("Randomizacion exitosa");
         else
@@ -24,4 +24,17 @@ class FIFO_Driver#(
         driver_interface.tx.wr_en   <= handler_subir.wr_en;
 
     endfunction
+
+    function void secuencia_bajada();
+        if (handler_bajar.randomize() == 1)
+            $display("Randomizacion bajada exitosa");
+        else
+            $display("Randomizacion bajada fallida");
+
+        driver_interface.tx.rst_s   <= handler_bajar.clr;
+        driver_interface.tx.data_in <= handler_bajar.data_in;
+        driver_interface.tx.rd_en   <= handler_bajar.rd_en;
+        driver_interface.tx.wr_en   <= handler_bajar.wr_en;
+    endfunction
+    
 endclass //FIFO_Driver

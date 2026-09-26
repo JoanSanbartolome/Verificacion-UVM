@@ -38,7 +38,7 @@ class RCSG_base #(
     endfunction
 
 //3 funcion reset del grado de llenado
-    static function gradoLlenado_rst;
+    static function void gradoLlenado_rst;
         use_dw = 0;
     endfunction
 //4 funcion post_randomize

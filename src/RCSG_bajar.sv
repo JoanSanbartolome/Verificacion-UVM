@@ -5,8 +5,8 @@ class RCSG_bajar #(
 
     constraint bajar_c {wr_en == 0 -> rd_en == 0;};
 
-    function new();
-        super.new();
+    function new(virtual fifo_if intf_fifo = null);
+        super.new(intf_fifo);
     endfunction : new
 
 endclass //RCSG_bajar extends RCSG_base

@@ -13,23 +13,5 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 # do Sim.do
-# 14
+# 7
 # Sim: load design
-# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.RAM_DP_vlg_tst 
-# Start time: 14:16:56 on Sep 24,2026
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Error: (vopt-7) Failed to open  file "C:/DMA/P1/Verificacion-UVM/sim/work/@_opt/_deps" in read mode.
-# File exists. (errno = EEXIST)
-# ** Warning: (vopt-56) Problem with optimized design dependency file "C:/DMA/P1/Verificacion-UVM/sim/work/@_opt/_deps" - file open failed. (Code 12)
-# No such file or directory. (errno = ENOENT)
-# ** Fatal: (vopt-8) Problem while reading dependency file "_deps".
-# No such file or directory. (errno = ENOENT)
-# Vopt Compiler exiting
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=2.
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./Sim.do PAUSED at line 18
-# End time: 15:32:20 on Sep 24,2026, Elapsed time: 1:15:24
-# Errors: 2, Warnings: 2
