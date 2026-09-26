@@ -11,11 +11,11 @@ class FIFO_Environment #(
     endfunction
 
     task run();
-        repeat (10) begin
+        repeat (20) begin
             driver_h.secuencia_subida();
             @(posedge driver_interface.clk); 
         end
-        repeat (10) begin
+        repeat (20) begin
             driver_h.secuencia_bajada();
             @(posedge driver_interface.clk);
         end

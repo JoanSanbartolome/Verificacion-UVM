@@ -61,7 +61,7 @@ module fifo_tb();
     test_h.run();
 
     // Finalizar la simulación
-    #100;
+    #2000;
     $display("Simulacion finalizada exitosamente.");
     $finish;
   end
